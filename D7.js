@@ -34,27 +34,57 @@ console.log(numeriPari);
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-const numbers = [3, 6, 8, 11];
+
+const sommaNumeri = (array) => {
+  let somma = 0;
+  array.forEach((elementOfArray) => {
+    somma += elementOfArray;
+  });
+  return somma;
+};
+console.log(sommaNumeri([7, 17, 1]));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-const numeri = [8, 6, 16, 1, 3];
-const totale = numeri.reduce((total, currentValue) => total + currentValue, 0);
-console.log(totale);
+const sumOfNumbers = (array) => {
+  return array.reduce((accumulator, curr) => accumulator + curr, 0);
+};
 
+console.log(sumOfNumbers([5, 7, 15, 2]));
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+const incrementaArray = (array, n) => {
+  return array.map((number) => number + n);
+};
+
+console.log(incrementaArray([5, 6, 7], 10));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
+
 */
+const mapArray = function (array) {
+  let mapArray2 = array.map((str) => str.length);
+  return mapArray2;
+};
+console.log(mapArray(["Buonasera", "a", "tutti"]));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+const numeriDispari = function () {
+  let listaDiNumeriDispari = [];
+  for (let i = 1; 1 < 100; i++) {
+    if (i % 2 !== 0) {
+      listaDiNumeriDispari.push(i);
+    }
+  }
+  return listaDiNumeriDispari;
+};
+console.log(numeriDispari());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
